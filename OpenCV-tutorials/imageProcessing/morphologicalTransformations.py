@@ -8,7 +8,8 @@ import cv2
 from matplotlib import pyplot as plt
 
 # Load the image in gray scale
-img = cv2.imread('../data/j.png', 0)
+# img = cv2.imread('../data/j.png', 0)
+img = cv2.imread('../data/watercolor-painting-artwork-wallpaper-preview.jpg', 0)
 
 # Create the desired kernel
 kernelType = 1
@@ -34,7 +35,8 @@ blackhat = cv2.morphologyEx(img, op=cv2.MORPH_BLACKHAT, kernel=kernel)
 # Display the results
 titles = ['original', 'erosion', 'dilation', 'opening', 'closing', 'gradient', 'tophat', 'blackhat']
 images = [img, erosion, dilation, opening, closing, gradient, tophat, blackhat]
-
+# titles = ['original', 'erosion', 'dilation', 'opening', 'closing']
+# images = [img, erosion, dilation, opening, closing]
 for i in range(len(titles)):
     plt.subplot(3, 3, i + 1)
     plt.imshow(images[i], cmap='gray', interpolation='bicubic')
